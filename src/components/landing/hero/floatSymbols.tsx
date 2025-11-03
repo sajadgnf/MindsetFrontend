@@ -1,7 +1,7 @@
 const symbols = [
   {
     label: "∑",
-    className: "absolute top-24 left-[10%] text-6xl text-primary/20 animate-float",
+    className: "absolute top-42 left-[10%] text-6xl text-blue-400/20 animate-float",
   },
   {
     label: "∫",
