@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 
+import Navigation from "@/components/landing/navigation";
+
 import { setLang } from "@/lib/i18n";
 import { getDictionary } from "@/src/dictionaries";
 
@@ -62,7 +64,10 @@ export default async function RootLayout({
   setLang(lang);
   return (
     <html lang={lang} className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

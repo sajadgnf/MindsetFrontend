@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 
-export function Navigation() {
+export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">

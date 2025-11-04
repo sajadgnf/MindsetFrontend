@@ -6,7 +6,7 @@ import { getLang } from "@/lib/i18n";
 import { getDictionary } from "@/src/dictionaries";
 import Image from "next/image";
 
-export async function Hero() {
+export default async function Hero() {
   const lang = getLang();
   const dict = await getDictionary(lang);
 

@@ -13,7 +13,7 @@ const symbols = [
   },
   {
     label: "√",
-    className: "absolute top-60 right-[25%] text-4xl text-cyan-400/20 animate-float-delayed",
+    className: "absolute bottom-60 right-[25%] text-4xl text-cyan-400/20 animate-float-delayed",
   },
 ];
 

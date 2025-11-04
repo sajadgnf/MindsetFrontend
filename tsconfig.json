@@ -45,6 +45,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "src/proxy.js",
+    "src/components/landing/features/card.tss",
   ],
   "exclude": [
     "node_modules"
