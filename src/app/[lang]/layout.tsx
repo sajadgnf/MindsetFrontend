@@ -3,7 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 
-import Navigation from "@/components/landing/navigation";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { DictionaryProvider } from "@/lib/dictionary-context";
 
 import { setLang } from "@/lib/i18n";
 import { getDictionary } from "@/src/dictionaries";
@@ -65,12 +67,16 @@ export default async function RootLayout({
   const rawLang = (await params).lang;
   const lang: langTypes = rawLang === "fa" ? "fa" : "fa";
   setLang(lang);
+  const dictionary = await getDictionary(lang);
 
   return (
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"} className="dark">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* <Navigation /> */}
-        {children}
+        <DictionaryProvider dictionary={dictionary}>
+          <Header />
+          {children}
+          <Footer />
+        </DictionaryProvider>
       </body>
     </html>
   );

@@ -1,10 +1,12 @@
+import Image from "next/image";
+
 import { ArrowRight, GitBranch } from "lucide-react";
 
 import FloatSymbols from "./floatSymbols";
 import { Button } from "@/components/ui/button";
+
 import { getLang } from "@/lib/i18n";
 import { getDictionary } from "@/src/dictionaries";
-import Image from "next/image";
 
 export default async function Hero() {
   const lang = getLang();

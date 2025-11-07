@@ -1,6 +1,7 @@
-import { Atom, BookOpen, GitMerge, Shield, Zap } from "lucide-react";
+import { Atom, BookOpen, GitMerge } from "lucide-react";
 
 import FeatureCard from "./card";
+
 import { getLang } from "@/lib/i18n";
 import { getDictionary } from "@/src/dictionaries";
 
@@ -12,21 +13,21 @@ export default async function Features() {
     {
       Icon: GitMerge,
       title: dict.courses_and_workshops,
-      description: "Work together seamlessly with powerful version control and code review tools.",
+      description: dict.courses_and_workshops_description,
       image: "/landing/courses-cover.webp",
       iconColor: "text-purple-400",
     },
     {
       Icon: BookOpen,
       title: dict.reading_courses,
-      description: "Automate your build, test, and deployment processes with integrated CI/CD.",
+      description: dict.reading_courses_description,
       image: "/landing/reading-courses-cover.webp",
       iconColor: "text-blue-400",
     },
     {
       Icon: Atom,
       title: dict.articles,
-      description: "Keep your code secure with advanced security features and automated vulnerability detection.",
+      description: dict.articles_description,
       image: "/landing/article-cover.webp",
       iconColor: "text-green-400",
     },

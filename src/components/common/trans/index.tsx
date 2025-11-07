@@ -1,13 +1,8 @@
-import { usePathname } from "next/navigation";
+import { useDictionary } from "@/lib/dictionary-context";
+import type { Dictionary } from "@/src/types/common";
 
-import { getDictionary } from "@/src/dictionaries";
-import type { langTypes, Dictionary } from "@/src/types/common";
-
-export default async function Trans({ children }: { children: keyof Dictionary }) {
-  const pathname = usePathname();
-  const rawLang = pathname.split("/").filter(Boolean)[0] || "fa";
-  const locale: langTypes = rawLang === "fa" ? "fa" : "fa";
-
-  const dict: Dictionary = await getDictionary(locale);
-  return <button>{dict[children]}</button>;
+export default function Trans({ children }: { children: keyof Dictionary | React.ReactNode }) {
+  const dict = useDictionary();
+  const key = typeof children === "string" ? (children as keyof Dictionary) : String(children) as keyof Dictionary;
+  return <>{dict[key]}</>;
 }

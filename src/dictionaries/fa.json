@@ -6,6 +6,11 @@
   "hero_telegram_cta": "سوالی دارید؟ پیام دهید",
   "register_for_course": "ثبت‌‌نام در دوره",
   "courses_and_workshops": "دوره‌ها و کارگاه‌ها",
+  "courses_and_workshops_description": "با دوره‌ها و کارگاه‌های گزیده، مسیر ارتقای ذهنیت و مهارت‌های نرم‌افزاری خود را تجربه کنید.",
   "reading_courses": "دوره‌های کتاب‌خوانی",
-  "articles": "مقالات"
+  "reading_courses_description": "با جلسات منظم کتاب‌خوانی، مفاهیم عمیق را گام‌به‌گام مرور کنید و عادت یادگیری مستمر بسازید.",
+  "articles": "مقالات",
+  "articles_description": "با مقالات تحلیلی و تجربیات عملی، از تازه‌ترین روندهای مهندسی نرم‌افزار باخبر بمانید.",
+  "testimonials_heading": "نظرات کاربران",
+  "more_details": "جزئیات بیشتر"
 }
