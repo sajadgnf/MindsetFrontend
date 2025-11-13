@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 
 const TestimonialCard = ({
   testimonial,
@@ -6,11 +7,11 @@ const TestimonialCard = ({
   testimonial: { name: string; avatar: string; description: string; role: string };
 }) => {
   return (
-    <div
+    <Card
       key={testimonial.name}
-      className="group  space-y-6 overflow-hidden rounded-lg border border-white/10 bg-[#161b22] p-6 backdrop-blur-sm transition-all hover:-translate-y-1 hover:scale-[1.02] hover:border-white/20 hover:shadow-lg"
+      className="group overflow-hidden rounded-lg border border-white/10 bg-[#161b22] p-0 backdrop-blur-sm h-64"
     >
-      <div className="flex items-center gap-4">
+      <CardHeader className="flex flex-row items-center gap-4 px-6 pt-6">
         <Image
           width={12}
           height={12}
@@ -19,12 +20,14 @@ const TestimonialCard = ({
           className="h-12 w-12 rounded-full"
         />
         <div>
-          <p className="font-semibold text-white">{testimonial.name}</p>
-          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+          <CardTitle className="text-white">{testimonial.name}</CardTitle>
+          <CardDescription>{testimonial.role}</CardDescription>
         </div>
-      </div>
-      <p className="text-lg leading-relaxed text-muted-foreground">{testimonial.description}</p>
-    </div>
+      </CardHeader>
+      <CardContent className="px-6 pb-6 overflow-y-auto h-full">
+        <p className="text-lg leading-relaxed text-muted-foreground">{testimonial.description}</p>
+      </CardContent>
+    </Card>
   );
 };
 

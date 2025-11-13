@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import { twMerge } from "tailwind-merge";
@@ -10,12 +11,14 @@ import { getDictionary } from "@/src/dictionaries";
 
 const FeatureCard = async ({
   Icon,
+  href,
   image,
   title,
   index,
   iconColor,
   description,
 }: {
+  href: string;
   image: string;
   title: string;
   index: number;
@@ -40,9 +43,11 @@ const FeatureCard = async ({
         </div>
 
         <p className="text-muted-foreground text-lg leading-7">{description}</p>
-        <Button variant="ghost">
-          {dict.more_details} <ArrowLeft />
-        </Button>
+        <Link href={href}>
+          <Button variant="ghost">
+            {dict.more_details} <ArrowLeft />
+          </Button>
+        </Link>
       </div>
 
       {/* Image */}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import { ArrowLeft } from "lucide-react";
@@ -7,6 +8,8 @@ import { Button } from "@/components/ui/button";
 
 import { getLang } from "@/lib/i18n";
 import { getDictionary } from "@/src/dictionaries";
+
+import { COURSES } from "@/src/constants/paths";
 
 export default async function Hero() {
   const lang = getLang();
@@ -29,15 +32,18 @@ export default async function Hero() {
         <p className="mx-auto mb-10 max-w-2xl text-muted-foreground text-2xl">{dict.hero_description}</p>
 
         {/* CTA Buttons */}
-        <Button
-          variant="ghost"
-          className="mb-8 w-44 rounded-full border border-secondary/50 backdrop-blur-sm cursor-pointer
+
+        <Link href={COURSES}>
+          <Button
+            variant="ghost"
+            className="mb-8 w-44 rounded-full border border-secondary/50 backdrop-blur-sm cursor-pointer
             hover:bg-linear-to-r hover:from-secondary/10 hover:via-purple-400/20 hover:to-secondary/10 transition-all animate-gradient
             "
-        >
-          <span className="text-sm">{dict.see_courses}</span>
-          <ArrowLeft />
-        </Button>
+          >
+            <span className="text-sm">{dict.see_courses}</span>
+            <ArrowLeft />
+          </Button>
+        </Link>
       </div>
     </section>
   );

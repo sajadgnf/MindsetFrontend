@@ -1,7 +1,9 @@
-import TestimonialCard from "./card";
+"use client";
 
-import { getLang } from "@/src/lib/i18n";
-import { getDictionary } from "@/src/dictionaries";
+import { Card, CardContent } from "@/components/ui/card";
+import TestimonialCard from "./card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useDictionary } from "@/lib/dictionary-context";
 
 const testimonials = [
   {
@@ -20,27 +22,55 @@ const testimonials = [
   },
   {
     description:
-      "Our team collaboration improved overnight. Mindset keeps everyone focused on outcomes and makes retros a breeze.",
-    name: "Mahsa Kiani",
-    role: "Product Design Lead",
+      "Our fefefe aboration improved overnight. Mindset keeps everyone focused on outcomes and makes retros a breeze.",
+    name: "ewef Kiani",
+    role: "Product bedrged",
+    avatar: "/landing/article-cover.webp",
+  },
+  {
+    description:
+      "Mindset helpegrewfgre twice as fast without sacrificing quality. Our engineers finally feel aligned with the product vision.",
+    name: "Sara Agredi",
+    role: "VP Enggerwrgeering",
+    avatar: "/landing/article-cover.webp",
+  },
+  {
+    description:
+      "Thgrearity we get from Mindset's playbooks has been transformative. Our roadmap meetings went from stressful to strategic.",
+    name: "Dgreel Rahimi",
+    role: "Heagerf Product",
+    avatar: "/landing/article-cover.webp",
+  },
+  {
+    description: "Our tegerni",
+    name: "Dgreel Rahimi",
+    role: "Prodger Design Lead",
     avatar: "/landing/article-cover.webp",
   },
 ];
 
-const Testimonials = async () => {
-  const dict = await getDictionary(getLang());
+const Testimonials = () => {
+  const dict = useDictionary();
 
   return (
-    <section className=" border-b border-border py-20">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-[2.5rem] font-bold text-center mb-14">{dict.testimonials_heading}</h2>
+    <section className=" container mx-auto max-w-7xl py-20">
+      <h2 className="text-[2.5rem] font-bold text-center mb-14">{dict.testimonials_heading}</h2>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <Carousel
+        opts={{ align: "start", loop: true }}
+        className="w-full container max-w-[95%] mx-auto xl:max-w-none"
+        dir="ltr"
+      >
+        <CarouselContent>
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard testimonial={testimonial} key={index} />
+            <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
+              <TestimonialCard testimonial={testimonial} />
+            </CarouselItem>
           ))}
-        </div>
-      </div>
+        </CarouselContent>
+        <CarouselPrevious className="-start-7! sm:-start-10!" />
+        <CarouselNext className="-end-7! sm:-end-10!" />
+      </Carousel>
     </section>
   );
 };

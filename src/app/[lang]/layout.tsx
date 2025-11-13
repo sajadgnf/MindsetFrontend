@@ -71,13 +71,15 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"} className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <DictionaryProvider dictionary={dictionary}>
+      <DictionaryProvider dictionary={dictionary}>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh flex flex-col`}>
           <Header />
-          {children}
+          <main className="flex-1">
+            {children}
+          </main>
           <Footer />
-        </DictionaryProvider>
-      </body>
+        </body>
+      </DictionaryProvider>
     </html>
   );
 }
