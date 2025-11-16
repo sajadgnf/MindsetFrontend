@@ -20,13 +20,13 @@ export default async function Hero() {
       <div className="absolute inset-0 z-0 h-full w-full -top-20 bottom-0 left-0 right-0">
         <Image fill src="/landing/hero-bg.svg" alt="Hero background" className="object-cover opacity-80" />
       </div>
-      <div className="absolute left-[55%] top-10 h-[80%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,#2B7FFF33_0%,transparent_60%)] blur-[128px]" />
-      <div className="absolute left-[45%] -top-20 h-[80%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,#AD46FF33_0%,transparent_60%)] blur-[128px]" />
-      <FloatSymbols />
+      <div className="absolute left-[50%] top-40 h-[50%] w-[50%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,#2B7FFF33_0%,transparent_60%)] blur-[128px]" />
+      <div className="absolute left-[50%] -top-20 h-[50%] w-[50%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,#AD46FF33_0%,transparent_60%)] blur-[128px]" />
+      {/* <FloatSymbols /> */}
 
       <div className="container mx-auto max-w-4xl text-center px-4 sm:px-6 lg:px-8">
         {/* Headline */}
-        <h1 className="mb-6 text-6xl font-medium">{dict.hero_headline}</h1>
+        <h1 className="mb-10 text-6xl font-medium">{dict.hero_headline}</h1>
 
         {/* Subheadline */}
         <p className="mx-auto mb-10 max-w-2xl text-muted-foreground text-2xl">{dict.hero_description}</p>
