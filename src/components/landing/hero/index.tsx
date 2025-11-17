@@ -18,7 +18,7 @@ export default async function Hero() {
   return (
     <section className="relative border-b border-border h-dvh max-h-[800px] flex items-center justify-center">
       <div className="absolute inset-0 z-0 h-full w-full -top-20 bottom-0 left-0 right-0">
-        <Image fill src="/landing/hero-bg.svg" alt="Hero background" className="object-cover opacity-80" />
+        <Image fill src="/landing/hero-bg.svg" alt="Hero background" className="object-fill opacity-80" />
       </div>
       <div className="absolute left-[50%] top-40 h-[50%] w-[50%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,#2B7FFF33_0%,transparent_60%)] blur-[128px]" />
       <div className="absolute left-[50%] -top-20 h-[50%] w-[50%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,#AD46FF33_0%,transparent_60%)] blur-[128px]" />
