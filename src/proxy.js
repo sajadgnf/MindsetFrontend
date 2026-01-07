@@ -16,6 +16,14 @@ export function proxy(request) {
   if (pathnameHasLocale) return;
 
   const locale = getLocale(request);
+
+  if (locale === "fa") {
+    // For fa: keep URL as-is, but internally serve /fa/...
+    const url = request.nextUrl.clone();
+    url.pathname = `/fa${pathname === "/" ? "" : pathname}`;
+    return NextResponse.rewrite(url);
+  }
+
   request.nextUrl.pathname = `/${locale}/${pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }
