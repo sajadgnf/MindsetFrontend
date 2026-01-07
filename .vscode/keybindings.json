@@ -1,0 +1,7 @@
+[
+  {
+    "key": "ctrl+l",
+    "command": "editor.action.selectLines",
+    "when": "editorTextFocus"
+  }
+]
