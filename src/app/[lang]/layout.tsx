@@ -11,7 +11,7 @@ import { setLang } from "@/lib/i18n";
 import { getDictionary } from "@/src/dictionaries";
 import type { langTypes } from "@/src/types/common";
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<Array<{ lang: string }>> {
   return [{ lang: "fa" }];
 }
 
@@ -74,9 +74,7 @@ export default async function RootLayout({
       <DictionaryProvider dictionary={dictionary}>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh flex flex-col`}>
           <Header />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </body>
       </DictionaryProvider>
