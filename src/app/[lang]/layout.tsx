@@ -57,7 +57,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
-export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
+export default async function RootLayout({
+  children,
+  params,
+}: Readonly<{
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+}>) {
   const rawLang = (await params).lang;
   const lang: langTypes = rawLang === "fa" ? "fa" : "fa";
   setLang(lang);
